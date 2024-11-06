@@ -12,3 +12,7 @@ To run the app you will need `docker` installed, then you can build and run with
 `
 docker compose up --build
 `
+## Login to the site
+The default login credentials are:
+- username: admin
+- password: admin
