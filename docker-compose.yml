@@ -1,0 +1,28 @@
+services:
+  backend:
+    build:
+      context: ./talent-manager-backend
+      dockerfile: Dockerfile
+    command: ["uv", "run", "gunicorn", "talent_manager.wsgi:application", "--bind", "0.0.0.0:8000"]
+    ports:
+      - "8000:8000"
+    networks:
+      - tm-network
+    environment:
+      - DEBUG=false
+
+  frontend:
+    build:
+      context: ./talent-manager-frontend
+      dockerfile: Dockerfile
+    command: ["npm", "--prefix", "./server", "run", "start"]
+    ports:
+      - "5000:5000"
+    networks:
+      - tm-network
+    environment:
+      - API_URL=http://backend:8000
+
+networks:
+  tm-network:
+    driver: bridge

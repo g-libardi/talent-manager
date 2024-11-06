@@ -1,0 +1,6 @@
+[submodule "talent-manager-backend"]
+	path = talent-manager-backend
+	url = https://github.com/g-libardi/talent-manager-backend
+[submodule "talent-manager-frontend"]
+	path = talent-manager-frontend
+	url = https://github.com/g-libardi/talent-manager-frontend
